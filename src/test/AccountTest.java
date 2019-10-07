@@ -1,5 +1,7 @@
 package test;
 
+import org.junit.Test;
+
 import main.Account;
 
 /*
@@ -13,30 +15,14 @@ import main.Account;
  * -금액은 원단위 
  * 질문 > 응답 > 정제 의  반복
 */
-
+//JUnit 사용
 // Account클래스 에 대한 테스트 클래스.
 public class AccountTest {
-	
-	
-	//테스트 시나리오를 코드로 기술하는 작업을 먼저 마치고 클래스 에러 해결 (테스트 케이스 작성 시 흐름을 잃지 않기 위함)
-	//정제 (리팩토링) 1.가독성 2.중복코드 3.네이밍변경 4.구조개선의 필요부분
+	// JUnit의 사용 으로인한 main()삭제 
+	@Test
 	public void testAccount() throws Exception {
 		//일련의 흐름을 먼저 작성 (시나리오)
 		Account account = new Account();
-		if(account == null) 		
-			throw new Exception("계좌생성 실패");		
+		//if문의 내용은 사실상 시나리오의 '검증'의 부분을 표현하기 위해 필요했기에 실상 필요하지않음 (제거).	
 	}
-	//테스트 케이스 실행
-	public static void main(String[] args) {
-		//계좌가 생성되는지 테스트 코드 선 실행 (질문) 결과 실패 > (응답) 성공하도록 만듬 클래스 생성 및 예외처리
-		AccountTest test = new AccountTest();
-		try {
-			test.testAccount();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("실패");
-		} 
-		System.out.println("성공");
-	}
-		
 }
