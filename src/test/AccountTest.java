@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import main.Account;
@@ -30,23 +31,24 @@ import main.Account;
 // Account클래스 에 대한 테스트 클래스.
 public class AccountTest {
 
+	private Account account;
+	@Before
+	public void setup() {
+		account = new Account(10000);
+	}
 	@Test
 	//Account 계좌 생성 클래스
 	public void testAccount() throws Exception {
-		Account account = new Account(10000);
 	}
 	@Test
 	//잔고 조회 서비스 
 	public void testGetBalance() throws Exception {
-		
-		Account account = new Account(10000);
+
 		assertEquals(10000,account.getBalance());
 		
-		//계속되는 테스트 케이스
 		account = new Account(1000);
 		assertEquals("1000원으로 계좌 생성후 잔고조회 ",1000,account.getBalance());
 		
-		//계속되는 테스트 케이스
 		account = new Account(0);
 		assertEquals(0,account.getBalance());
 	}
@@ -54,7 +56,6 @@ public class AccountTest {
 	@Test
 	//입금 서비스 
 	public void testDeposit() throws Exception {
-		Account account = new Account(10000);
 		account.deposit(1000);
 		assertEquals(11000,account.getBalance());
 		
@@ -62,7 +63,6 @@ public class AccountTest {
 	@Test
 	//출금 서비스
 	public void testWithdraw() throws Exception {
-		Account account = new Account(10000);
 		account.withdraw(1000);
 		assertEquals(9000,account.getBalance());
 	}
