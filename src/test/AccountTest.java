@@ -52,11 +52,10 @@ public class AccountTest {
 	}
 	
 	@Test
-	//입금 서비스 (메서드명과 역할을 정해서 테스트케이스 구현)
+	//입금 서비스 
 	public void testDeposit() throws Exception {
 		Account account = new Account(10000);
 		account.deposit(1000);
-		//실패(결과값 확인후 성공으로 로직구현)
 		assertEquals(11000,account.getBalance());
 		
 	}
