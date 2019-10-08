@@ -33,7 +33,7 @@ public class AccountTest {
 
 	private Account account;
 	@Before
-	public void setup() {
+	public void setUp() {
 		account = new Account(10000);
 	}
 	@Test
