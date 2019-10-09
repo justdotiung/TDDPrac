@@ -3,6 +3,7 @@ package test;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import main.Account;
@@ -65,5 +66,16 @@ public class AccountTest {
 	public void testWithdraw() throws Exception {
 		account.withdraw(1000);
 		assertEquals(9000,account.getBalance());
+	}
+	@Test (expected=NumberFormatException.class)
+	public void testException() throws Exception {
+		String value = "a123";
+		System.out.println(Integer.parseInt(value));
+	}
+	@Ignore
+	@Test(timeout = 5000)
+	public void testPingback() throws Exception {
+		Thread.sleep(1000);
+	
 	}
 }

@@ -11,4 +11,8 @@ public class AccountJUnit3 {
 	public void withdraw(int money) {this.balance -= money;}
 	
 	public void deposit(int money) {this.balance += money;}
+	public static void main(String[] args) {
+		String value = "a123";
+		System.out.println(Integer.parseInt(value));
+	}
 }

@@ -1,9 +1,11 @@
 package main;
 
+
+import org.junit.Test;
+
 import junit.framework.TestCase;
 
 public class AccountJUnit3Test extends TestCase {
-	
 	private AccountJUnit3 account;
 	
 	protected void setUp() throws Exception{
@@ -33,5 +35,4 @@ public class AccountJUnit3Test extends TestCase {
 		account.deposit(1000); 
 		assertEquals(11000, account.getBalance());// TODO 예금 테스트
 	}
-
 }
