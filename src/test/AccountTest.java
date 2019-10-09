@@ -67,6 +67,8 @@ public class AccountTest {
 		account.withdraw(1000);
 		assertEquals(9000,account.getBalance());
 	}
+	
+	
 	@Test (expected=NumberFormatException.class)
 	public void testException() throws Exception {
 		String value = "a123";
@@ -76,6 +78,19 @@ public class AccountTest {
 	@Test(timeout = 5000)
 	public void testPingback() throws Exception {
 		Thread.sleep(1000);
-	
 	}
+	//추가적 정보기재테스트
+	@Test
+	public void testWithdraw_마이너스통장인출() throws Exception {}
+	@Test
+	public void testWithdraw_잔고가0원일때() throws Exception {}
+	//시나리오 집중테스트
+	@Test
+	public void 평일_30분이내에_환승_성공한다() throws Exception{}
+	@Test
+	public void 평일_30분이후에_환승_성공한다() {}
+	@Test
+	public void 휴일_1시간이내에_환승_성공한다() {}
+	@Test
+	public void 휴일_1시간이후에_환승_성공한다() {}
 }
