@@ -2,20 +2,56 @@ package main.testdouble;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 //테스트 더블
 public class UserTest {
+	private ICoupon coupon;
+	@Before
+	public void setUp() {
+		coupon = new ICoupon() {
+			
+			@Override
+			public boolean isValid() {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public boolean isAppliable(Item item) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public String getName() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public int getDiscountPercent() {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+			
+			@Override
+			public void doExpire() {
+				// TODO Auto-generated method stub
+				
+			}
+		};
+	}
 	@Test
 	public void testAddCoupon() throws Exception {
 		User user = new User("area88");
 		assertEquals("쿠폰 수령 전", 0, user.getTotalCouponCount());
-
-		ICoupon coupon = new DummyCoupon(); // (Dummy Object를 생성)
-
+	
 		user.addCoupon(coupon); // 다시 테스트 작성.
 		assertEquals("쿠폰 수령 후", 1, user.getTotalCouponCount());
 	}
+
 
 	@Test
 	public void testGetLastOccupiedCoupon() throws Exception {
