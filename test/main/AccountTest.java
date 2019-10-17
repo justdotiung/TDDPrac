@@ -1,6 +1,7 @@
 package main;
 
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -41,10 +42,11 @@ public class AccountTest {
 	//Account 계좌 생성 클래스
 	public void testAccount() throws Exception {
 	}
+	
 	@Test
 	//잔고 조회 서비스 
 	public void testGetBalance() throws Exception {
-
+		
 		assertEquals(10000,account.getBalance());
 		
 		account = new Account(1000);
